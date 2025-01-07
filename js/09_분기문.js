@@ -197,6 +197,11 @@ function startGame(){
         }
 
         // UP / DOWN (단, 7회째면 실패)
+        if(count === 7){
+            alert(`7회 초과로 실패! (정답: ${answer})`);
+            break;
+        }
+
         if(answer < value){
             alert(`DOWN (현재 ${count}회)`);
         } else{
