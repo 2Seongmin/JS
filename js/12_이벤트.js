@@ -155,6 +155,7 @@ const inputs = document.querySelectorAll(".inputColor");
 // 색이 변경되는 공간
 const results = document.querySelectorAll(".display");
 
+
 for(let i = 0; i < inputs.length; i++){
         changeBtn.addEventListener("click", function(){
 
@@ -162,6 +163,6 @@ for(let i = 0; i < inputs.length; i++){
             results[i].style.backgroundColor = inputs[i].value;
         
         });
-
     
 }
+
