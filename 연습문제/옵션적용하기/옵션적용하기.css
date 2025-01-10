@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.label-contianer{
+    display: flex;
+}
+
+label {
+    font-weight: bold;
+    text-align: center;
+}
+
+#result-container{
+    display: flex;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result{
+    border: 1px solid black;
+    width: 10px;
+    height: 10px;
+    justify-content: center;
+    align-items: center;
+}
