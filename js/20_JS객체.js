@@ -221,6 +221,12 @@ selectStudent.addEventListener("click", () => {
 
         // tbody에 tr 추가
         tbody.append(tr);
+
+        // 이름이 작성된 요소(td1)가 클릭되었을 때
+        td1.addEventListener("click", () => {
+            // inform 메서드 반환 결과 alert 출력
+            alert(std.inform());
+        }); 
     } );
 
     // #total에 인원 수 출력
@@ -234,7 +240,6 @@ selectStudent.addEventListener("click", () => {
         // index : 현재 반복 접근 중인 index 값    
     } );
 */
-
 
 
 /* 
@@ -252,3 +257,29 @@ selectStudent.addEventListener("click", () => {
     3) 일반 함수, 화살표 함수, 전역 변수에서 this
         => window 객체
 */
+
+
+/* JSON */
+const checkJson = document.querySelector("#checkJson");
+checkJson.addEventListener("click", () => {
+
+    // JS 객체 생성
+    const user = {
+        "id" : "user01",
+        "pw" : "pass01",
+        "email" : "user01.naver.com",
+        "phone" : "010-1234-4321"
+    };
+    console.log("obj : ", user, typeof user);
+
+    // JSON.stringify(JS객체) : JS객체 -> JSON(문자열)
+    console.log("JSON.stringify(user) : ", JSON.stringify(user), typeof JSON.stringify(user) );
+
+    // JSON 직접 작성
+    const menu = '{"name" : "김밥","price" : 4000}';
+    console.log("menu : ", menu, typeof menu);
+
+    // JSON.parse(JSON 문자열) : JSON 문자열 -> JS 객체
+    console.log(JSON.parse(menu), typeof JSON.parse(menu));
+    
+});
