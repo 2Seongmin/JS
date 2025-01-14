@@ -35,12 +35,12 @@ calcBtn.addEventListener("click", () => {
       sum += price;
 
       // 과일명과 개수를 결과 텍스트에 추가
-      resultText += `${checkboxes[i].nextElementSibling.textContent} ${quantity}개 `;
+      resultText += `${checkboxes[i].nextElementSibling.textContent} ${quantity}개`;
     }
   }
 
   // 결과 표시
-  resultText += `의 합은 ${sum}원입니다.`;
+  resultText += `합은 ${sum}원입니다.`;
   
   resultContainer.textContent = resultText; // 결과 영역 업데이트
 });

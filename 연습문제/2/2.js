@@ -1,21 +1,20 @@
 // 클릭한 숫자 값 읽어오기
-const inputs = document.querySelectorAll(".container > .number");
+const inputs = document.querySelectorAll(".number");
 
 const result = document.querySelector("#result");
 
-for(let i = 0; i < inputs.length; i++){
+for(let num of inputs){
 
     // 숫자 클릭 시 이벤트
-    inputs[i].addEventListener("click", () => {
+    num.addEventListener("click", (e) => {
 
-        const number = Number(inputs[i].textContent);
-        
-        // 결과값 출력
-        const span = document.createElement("span");
-        span.innerText = number;
+        if(result.innerText.length >= 10){
+            alert("10자까지만 입력할 수 있습니다.");
+            return;
+        }
 
-        result.append(span);
-        
+        // e.target : 이벤트가 발생된 요소
+        result.innerText += e.target.textContent; // 버튼 내용 누적 
     });
 
 }
@@ -25,5 +24,5 @@ const resetBtn = document.querySelector("#reset");
 
 resetBtn.addEventListener("click", () => {
 
-    result.innerHTML = "";
+    result.innerHTML = ""; // 누적된 번호 삭제
 });
