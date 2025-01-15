@@ -47,7 +47,7 @@ ul{
 
 #btnContainer > button{
     background-color: white;
-    width: 80px;
+    width: 60px;
     border-radius: 5px;
-    margin: 10px 0;
+    margin: 10px 3px;
 }

@@ -1,7 +1,7 @@
 /* 스톱워치 관련 요소 모두 얻어와 전역 변수로 선언 */
 const display = document.querySelector("#display");
 
-const startBtn = document.querySelector("#startBtn ");
+const startBtn = document.querySelector("#startBtn");
 const recordBtn = document.querySelector("#recordBtn");
 const resetBtn = document.querySelector("#resetBtn");
 
@@ -133,8 +133,6 @@ recordBtn.addEventListener("click", () => {
     recordContainer.append(li); // 화면에 추가
 
 });
-
-
 
 /* 
     clearInterval() 사용 방법
