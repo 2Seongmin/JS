@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+.container{
+    margin-top: 50px;
+}
+.top{
+    font-weight: bold;
+}
+#input{
+    font-size: 25px;
+}
+.inputBox{
+    border: 2px solid black;
+}
+.menuContainer{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 600px;
+    height: 300px;
+    padding: 10px;
+}
+
+ul{
+    list-style: none;
+    flex-wrap: wrap;
+}
+.menu{
+    width: 33%;
+    height: 20%;
+    font-size: 15px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#btnContainer{
+    text-align: right;
+}
+
+#btnContainer > button{
+    background-color: white;
+    width: 80px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
