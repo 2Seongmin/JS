@@ -14,7 +14,9 @@ input.addEventListener("click", () => {
 /* 수정 버튼 클릭 -> 메뉴판 바꾸기 & 버튼 바꾸기 */
 const editBtn = document.querySelector(".editBtn");
 const menuContainer = document.querySelector(".menuContainer");
-const btnContainer = document.querySelector("#btnContainer");
+
+const addBtn = document.querySelector(".addBtn");
+const deleteBtn = document.querySelector(".deleteBtn");
 
 let MenuData = []; // 메뉴 데이터 저장 배열
 
@@ -32,14 +34,12 @@ menus.forEach((menu, i) => {
 
 editBtn.addEventListener("click", () => {
 
+    // "종료" 버튼 상태일 때
     if(editBtn.innerText === "종료"){
         editBtn.innerText = "수정";
 
-        // 삭제/추가 버튼 삭제
-        const deleteBtn = document.querySelector(".delete");
-        const addBtn = document.querySelector(".add");
-        addBtn.remove();
-        deleteBtn.remove();
+        addBtn.classList.add("hidden");
+        deleteBtn.classList.add("hidden");
 
         return;
     }
@@ -47,15 +47,8 @@ editBtn.addEventListener("click", () => {
     // 버튼 바꾸기
     editBtn.innerText = "종료";
 
-    const deleteBtn = document.createElement("button");
-    deleteBtn.className = "delete";
-    deleteBtn.innerText = "삭제";
-
-    const addBtn = document.createElement("button");
-    addBtn.className = "add";
-    addBtn.innerText = "추가";
-
-    btnContainer.prepend(addBtn, deleteBtn);
+    addBtn.classList.remove("hidden");
+    deleteBtn.classList.remove("hidden");
 
     // 메뉴판을 input으로 바꾸기
     menuContainer.innerHTML = "";
@@ -86,32 +79,33 @@ editBtn.addEventListener("click", () => {
 
    menuList();
 
-    // 추가 버튼
-    addBtn.addEventListener("click", () => {
-        const li = document.createElement("li");
-        const cb = document.createElement("input");
-        cb.type = "checkbox";
+});
 
-        const input1 = document.createElement("input");
-        input1.type = "text";
+// 추가 버튼
+addBtn.addEventListener("click", () => {
+    const li = document.createElement("li");
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
 
-        const input2 = document.createElement("input");
-        input2.type = "text";
-    
-        ul.append(li);
-        li.append(cb, input1, input2);
-        menuContainer.append(li);
-    });
+    const input1 = document.createElement("input");
+    input1.type = "text";
 
-    // 삭제 버튼
-    deleteBtn.addEventListener("click", () => {
-        const checkboxes = document.querySelectorAll(".checkboxes");
+    const input2 = document.createElement("input");
+    input2.type = "text";
 
-        checkboxes.forEach((checkbox, index) => {
-            if (checkbox.checked) {
-                menusData.splice(index, 1); // 메뉴 데이터 삭제
-                checkbox.closest("li").remove(); // 화면에서 해당 메뉴 삭제
-            }
-        });
+    ul.append(li);
+    li.append(cb, input1, input2);
+    menuContainer.append(li);
+});
+
+// 삭제 버튼
+deleteBtn.addEventListener("click", () => {
+    const checkboxes = document.querySelectorAll(".checkboxes");
+
+    checkboxes.forEach((checkbox, index) => {
+        if (checkbox.checked) {
+            menusData.splice(index, 1); // 메뉴 데이터 삭제
+            checkbox.closest("li").remove(); // 화면에서 해당 메뉴 삭제
+        }
     });
 });
