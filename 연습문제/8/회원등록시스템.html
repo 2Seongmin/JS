@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 등록 시스템</title>
+    <link rel="stylesheet" href="회원등록시스템.css">
+</head>
+<body>
+    <h1>회원 등록 시스템</h1>
+
+    <div id="container">
+        <div id="leftContainer">
+            <h2>회원 등록</h2>
+            <div>
+                <label>아이디:</label>
+                <input type="text" id="inputId">
+            </div>
+            <div>
+                <label>이름:</label>
+                <input type="text" id="inputName">
+            </div>
+            <div>
+                <label>전화번호:</label>
+                <input type="text" id="inputPhone">
+            </div>
+
+            <button id="submitBtn">등록</button>
+        </div>
+    
+        <div id="rightContainer">
+            <h2>등록된 회원 목록</h2>
+            
+            <button id="deleteBtn">선택 삭제</button>
+
+            <table>
+                <tr id="thead">
+                    <td><input type="checkbox"></td>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>전화번호</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+
+    <script src="회원등록시스템.js"></script>
+</body>
+</html>
